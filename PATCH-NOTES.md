@@ -22,3 +22,15 @@ were unaffected.
 - `gallery-card.js` attached to the v1.2.1 release is the patched build
   (based on the v1.2.0 asset). HACS auto-generates the `.gz` variant
   on download; do not commit it.
+
+## v1.2.2 — embedded placeholder
+- The card used to reference `/local/community/gallery-card/placeholder.jpg`
+  for lazy thumbnails, but HACS dashboard installs only ship the `.js` file,
+  so the placeholder was missing (404) and absent snapshots rendered as
+  broken-image icons (no `onerror` handling anywhere).
+- The placeholder is now embedded in `gallery-card.js` as a data-URI
+  (`window.__gph`, ~5 KB PNG) and wired everywhere: lazy thumbnails initial
+  `src`, `@error` fallback on thumbnails / main viewer, `poster` on menu +
+  main videos, popup and fullscreen viewer fallback.
+- External `placeholder.jpg` is no longer required and can be removed
+  from `www/community/gallery-card/`.
