@@ -1,5 +1,11 @@
 # Gallery Card
+> **Fork note:** This is a community fork of the archived
+> [lukelalo/gallery-card](https://github.com/lukelalo/gallery-card) v1.2.0.
+> Changes in v1.2.1: fixed Zoom in the HA Android companion app (in-page
+> fullscreen viewer with pinch-to-zoom); Zoom button moved to the header.
+> See [PATCH-NOTES.md](PATCH-NOTES.md) for details.
 
+---
 Custom card for Home Assistant's UI LoveLace which will display images and videos in the style of a gallery.  Also supports displaying camera images.
 
 This was developed for use alongside the [component for Kuna cameras](https://github.com/marthoc/kuna) but should work with any images/videos, in theory.
